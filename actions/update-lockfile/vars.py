@@ -19,7 +19,7 @@ elif os.environ["INPUT_IS_PROD"] == "true":
     input_data = {
         "is_prod": True,
         "api_repo_name": "bazelbuild/bazel",
-        "user_name": "bazel-io",
+        "user_name": "xqlym5",
         "email": "bazel-io-bot@google.com",
     }
 
