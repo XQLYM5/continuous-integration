@@ -26,11 +26,14 @@ def get_files_for_pr(pr_number):
     }
     files_list = []
     response_pr_files = requests.get(f"https://api.github.com/repos/{gh_cli_repo_name}/pulls/{pr_number}/files", headers=headers, params=params).json()
+    print(response_pr_files)
     files_list.extend(response_pr_files)
     while len(response_pr_files) == 100:
         page_param += 1
         response_pr_files = requests.get(f"https://api.github.com/repos/{gh_cli_repo_name}/pulls/{pr_number}/files", headers=headers, params=params).json()
         files_list.extend(response_pr_files)
+    print(files_list)
+
     return files_list
 
 def clone_repo():
